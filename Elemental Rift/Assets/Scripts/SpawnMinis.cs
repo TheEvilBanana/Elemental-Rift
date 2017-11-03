@@ -29,7 +29,7 @@ public class SpawnMinis : MonoBehaviour
          
             for(int i = 0; i < 3; i++)
             {
-                GameObject clone = (GameObject)Instantiate(objectToClone, new Vector3(playerTransform.position.x + i, playerTransform.position.y, playerTransform.position.z + 1), Quaternion.identity);
+                GameObject clone = (GameObject)Instantiate(objectToClone, new Vector3(playerTransform.position.x, playerTransform.position.y, playerTransform.position.z + 1 + i), playerTransform.rotation);
                 clonedObject[i] = clone;
                 cloneCreated[i] = true;
 

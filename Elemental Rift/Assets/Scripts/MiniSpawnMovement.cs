@@ -5,9 +5,16 @@ using UnityEngine;
 public class MiniSpawnMovement : MonoBehaviour
 {
 
+    public GameObject playerObject;
+
 
     public Transform MiniSpawn;
     private int damage = 10;
+
+    private void Start()
+    {
+        
+    }
 
     private void Awake()
     {
@@ -16,7 +23,7 @@ public class MiniSpawnMovement : MonoBehaviour
 
     private void Update()
     {
-        MiniSpawn.Translate(Vector3.forward * 0.5f * Time.deltaTime);
+        MiniSpawn.Translate(playerObject.transform.forward * 0.5f * Time.deltaTime);
 
     }
 
