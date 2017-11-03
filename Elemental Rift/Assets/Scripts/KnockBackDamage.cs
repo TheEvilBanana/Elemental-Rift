@@ -4,32 +4,36 @@ using UnityEngine;
 
 public class KnockBackDamage : MonoBehaviour {
 
-    public GameObject knockCollider;
+    private Vector3 colRange;
 
-    public float knockBack = 2.0f;
-    float startTime;
-    float checkTime;
-
-    private GameObject colliderObj;
     private Transform transform;
+    private Vector3 location;
+    private Collider[] objectsInRange;
+
     // Use this for initialization
     void Start()
     {
-        startTime = Time.time;
-        transform = gameObject.transform;
+        colRange.x = 0.75f;
+        colRange.y = 1.0f;
+        colRange.z = 2.0f;
+
+        transform = GetComponent<Transform>();
+
+        location = transform.position;
+
+        objectsInRange = Physics.OverlapBox(location, colRange);
+        foreach (Collider col in objectsInRange)
+        {
+            if (col.CompareTag("Enemy"))
+            {
+                Destroy(col.gameObject);
+            }
+        }
     }
 
     // Update is called once per frame
     void Update()
     {
-        checkTime = Time.time - startTime;
 
-        colliderObj = (GameObject)Instantiate(knockCollider, transform.position, transform.rotation);
-        Destroy(colliderObj, 1);
-
-        if (checkTime >= knockBack)
-        {
-            Destroy(gameObject);
-        }
     }
 }

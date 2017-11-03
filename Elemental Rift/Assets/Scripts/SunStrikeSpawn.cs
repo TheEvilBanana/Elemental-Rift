@@ -5,6 +5,9 @@ using UnityEngine;
 public class SunStrikeSpawn : MonoBehaviour {
     public GameObject sunStrike;
 
+    public float fireRate = 1.5f;
+    private float nextFire = 0.0f;
+
     private Transform transform;
     //private Vector3 spawnPosition;
     // Use this for initialization
@@ -17,8 +20,10 @@ public class SunStrikeSpawn : MonoBehaviour {
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.E))
+        if (Input.GetKeyDown(KeyCode.E) && Time.time > nextFire)
         {
+            nextFire = Time.time + fireRate;
+
             Instantiate(sunStrike, transform.position, transform.rotation);
         }
     }

@@ -23,7 +23,7 @@ public class FrostShock : MonoBehaviour {
     void OnMouseOver()
     {
         // Debug.Log("Clicked");
-        if (Input.GetKeyDown(KeyCode.T))
+        if (Input.GetKeyDown(KeyCode.Q))
         {
             agent.Stop();
             //agent.Resume();                           // Use this to unfreeze and continue nav mesh movement

@@ -6,6 +6,9 @@ public class VolcanoSpawn : MonoBehaviour {
 
     public GameObject volcano;
 
+    public float fireRate = 1.5f;
+    private float nextFire = 0.0f;
+
     private Transform transform;
     //private Vector3 spawnPosition;
 	// Use this for initialization
@@ -16,8 +19,9 @@ public class VolcanoSpawn : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        if (Input.GetKeyDown(KeyCode.Q))
+        if (Input.GetKeyDown(KeyCode.Q) && Time.time > nextFire)
         {
+            nextFire = Time.time + fireRate;
             Instantiate(volcano, transform.position, transform.rotation);
         }
 	}
