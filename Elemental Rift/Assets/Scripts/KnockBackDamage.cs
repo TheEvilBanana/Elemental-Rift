@@ -13,6 +13,7 @@ public class KnockBackDamage : MonoBehaviour {
     // Use this for initialization
     void Start()
     {
+        print("Collider appearing");
         colRange.x = 0.75f;
         colRange.y = 1.0f;
         colRange.z = 2.0f;
@@ -24,9 +25,11 @@ public class KnockBackDamage : MonoBehaviour {
         objectsInRange = Physics.OverlapBox(location, colRange);
         foreach (Collider col in objectsInRange)
         {
+            print("aaa");
             if (col.CompareTag("Enemy"))
             {
                 Destroy(col.gameObject);
+                print("Enemy present");
             }
         }
     }

@@ -149,7 +149,7 @@ GameObject:
   - component: {fileID: 114179882541965280}
   - component: {fileID: 114684010630902804}
   m_Layer: 0
-  m_Name: Player_Ruckita
+  m_Name: Player_Ruchita
   m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

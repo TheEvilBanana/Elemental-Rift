@@ -27,7 +27,8 @@ public class FrostShock : MonoBehaviour {
         {
             agent.Stop();
             //agent.Resume();                           // Use this to unfreeze and continue nav mesh movement
-            GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezeAll;
+            //  GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezeAll;
+            Destroy(gameObject);
              Debug.Log("Freeze!");
             AudioFreezeEffect.Play();
         }

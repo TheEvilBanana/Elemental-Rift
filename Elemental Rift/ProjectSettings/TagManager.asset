@@ -12,6 +12,7 @@ TagManager:
   - Light
   - Water
   - FloatingObject
+  - BigEnemy
   layers:
   - Default
   - TransparentFX
