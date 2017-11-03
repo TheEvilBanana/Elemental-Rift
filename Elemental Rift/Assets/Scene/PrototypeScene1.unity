@@ -7336,7 +7336,7 @@ Mesh:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: pb_Mesh19792
+  m_Name: pb_Mesh22808
   serializedVersion: 8
   m_SubMeshes:
   - serializedVersion: 2
@@ -24446,7 +24446,7 @@ Mesh:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: pb_Mesh12358
+  m_Name: pb_Mesh23206
   serializedVersion: 8
   m_SubMeshes:
   - serializedVersion: 2
@@ -30773,7 +30773,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 2100000, guid: caa4708c0724b184d86d643c2d95f945, type: 2}
+  - {fileID: 2100000, guid: dba33a2bf8b23400bacf323fc2816a51, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
