@@ -3,7 +3,15 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - Enemy
+  - AIPatrolTarget1
+  - AIPatrolTarget2
+  - Spawns
+  - Environment
+  - Light
+  - Water
+  - FloatingObject
   layers:
   - Default
   - TransparentFX

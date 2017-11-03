@@ -1,6 +1,6 @@
 fileFormatVersion: 2
-guid: dca73a19351322744a726745a5ca2199
-timeCreated: 1509397698
+guid: 4c1e1c7be1e7685408ac09b260d7e6ed
+timeCreated: 1509673738
 licenseType: Free
 ModelImporter:
   serializedVersion: 22
@@ -12,7 +12,12 @@ ModelImporter:
     2300000: Stone1981
     3300000: Stone1981
     4300000: Stone1981
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Stone1981Mat
+    second: {fileID: 2100000, guid: ec39b0b10624e9244bebe284b2ca5aba, type: 2}
   materials:
     importMaterials: 1
     materialName: 0

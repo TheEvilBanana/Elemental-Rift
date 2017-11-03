@@ -6,10 +6,14 @@ public class KnockBack : MonoBehaviour {
 
     // Use this for initialization
     public ParticleSystem fissureAttack;
+    
     public Transform playerTransform;
-	void Start () {
-		
-	}
+
+   
+
+    void Start () {
+        
+    }
 	
 	// Update is called once per frame
 	void Update () {
@@ -18,6 +22,7 @@ public class KnockBack : MonoBehaviour {
         {
             fissureAttack.transform.position = playerTransform.position + playerTransform.forward * 5;
             fissureAttack.Play();
+            
         }
 		
 	}
