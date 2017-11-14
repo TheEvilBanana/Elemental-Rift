@@ -5,6 +5,13 @@ TagManager:
   serializedVersion: 2
   tags:
   - Freezespell
+  - Destructible
+  - Enemy
+  - Waypoint
+  - Water_Door1
+  - Water_Door2
+  - Water_Door3
+  - Radiated_Plane
   layers:
   - Default
   - TransparentFX

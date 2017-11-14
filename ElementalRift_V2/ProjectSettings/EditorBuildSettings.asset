@@ -4,4 +4,19 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Scene/Menu.unity
+    guid: 11dbe5ee8fc20f54f8f4a1c8c6aff625
+  - enabled: 1
+    path: Assets/Scene/PrototypeLevel1.unity
+    guid: 1eb18b16ca0b21347a66519f572b863d
+  - enabled: 1
+    path: Assets/Scene/PrototypeLevel1_Fire.unity
+    guid: eaeb8afaa2ca36944bcc2ddc04282cd9
+  - enabled: 1
+    path: Assets/Scene/PrototypeLevel1_Earth.unity
+    guid: 3349be17fbcc1ee48922f22768d3b019
+  - enabled: 1
+    path: Assets/Scene/PrototypeLevel1_Water.unity
+    guid: 86a97b1804b5906419c650e43e570eb8
