@@ -9,12 +9,14 @@ public class Gun : MonoBehaviour
     public float range = 100f;
 
     public Camera camera;
+    public GameObject Player;
     public GameObject freezeEffect;
     public GameObject knockBackEffect;
+    public GameObject knockBackCollider;
 
-    void Start()
+    private void Awake()
     {
-
+        Player = GameObject.FindGameObjectWithTag("Player");
     }
 
 
@@ -37,7 +39,7 @@ public class Gun : MonoBehaviour
     void Shoot()
     {
         RaycastHit hit;
-        if (Physics.Raycast(camera.transform.position, camera.transform.forward, out hit, range))
+        if (Physics.Raycast(Player.transform.position, Player.transform.forward, out hit, range))
         {
             Debug.Log(hit.transform);
             Enemy target = hit.transform.GetComponent<Enemy>();
@@ -55,7 +57,9 @@ public class Gun : MonoBehaviour
     //For the knockback attack
     void KnockBack()
     {
-        GameObject knock = Instantiate(knockBackEffect, camera.transform.position, camera.transform.rotation);
+        GameObject knock = Instantiate(knockBackEffect, Player.transform.position, Player.transform.rotation);
+       // GameObject collider = Instantiate(knockBackCollider, Player.transform.position, Player.transform.rotation);
         Destroy(knock, 2f);
+        //Destroy(collider, 2f);
     }
 }

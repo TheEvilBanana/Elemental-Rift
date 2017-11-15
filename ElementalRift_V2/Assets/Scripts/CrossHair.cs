@@ -14,6 +14,8 @@ public class CrossHair : MonoBehaviour {
     [SerializeField]
     float minAngle;
 
+    public GameObject cameraLookTarget;
+
     float lookHeight;
 
     public void LookHeight(float value)

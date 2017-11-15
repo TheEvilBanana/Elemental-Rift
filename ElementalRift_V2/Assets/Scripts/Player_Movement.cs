@@ -25,9 +25,17 @@ public class Player_Movement : MonoBehaviour
     private Player_Movement localPlayer;
     Vector2 mouseInput;
 
+    public GameObject cameraLookTarget;
+    public GameObject RotateY;
+
+    float rotationY = 0f;
+    public float maxAngle;
+    public float minAngle;
+
     private void Awake()
     {
         localPlayer = this;
+
     }
 
     private void Update()
@@ -43,7 +51,22 @@ public class Player_Movement : MonoBehaviour
 
         transform.Rotate(Vector3.up * mouseInput.x * Sensitivity.x);
 
+        RotateY.transform.Rotate(Vector3.left * mouseInput.y * Sensitivity.y);
+        //RotationAlongY(mouseInput.y*Sensitivity.y);
+
         Crosshair.LookHeight(mouseInput.y * Sensitivity.y);
+
+    }
+
+    private void RotationAlongY(float value)
+    {
+        rotationY += value;
+        if (rotationY > 30 || rotationY < -30)
+            rotationY -= value;
+
+        transform.Rotate(Vector3.right * rotationY);
+
+        //transform.localEulerAngles = new Vector3(transform.localEulerAngles.x, rotationY, transform.localEulerAngles.z);
 
     }
 
