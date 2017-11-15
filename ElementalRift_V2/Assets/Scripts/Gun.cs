@@ -5,11 +5,11 @@ using UnityEngine;
 public class Gun : MonoBehaviour
 {
 
-    public float damage = 10f;
+
     public float range = 100f;
 
     public Camera camera;
-    public GameObject Player;
+    private GameObject Player;
     public GameObject freezeEffect;
     public GameObject knockBackEffect;
     public GameObject knockBackCollider;
@@ -46,7 +46,7 @@ public class Gun : MonoBehaviour
 
             if (target != null)
             {
-                target.TakeDamage(damage);
+                target.TakeDamage();
             }
 
             GameObject impactGO = Instantiate(freezeEffect, hit.point, Quaternion.LookRotation(hit.normal));

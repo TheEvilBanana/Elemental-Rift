@@ -5,6 +5,7 @@ using UnityEngine;
 public class EnemyPatrol : MonoBehaviour {
 
         public Transform player;
+        public float speed = 5.0f;
 
         void Update()
         {
@@ -19,7 +20,7 @@ public class EnemyPatrol : MonoBehaviour {
                 transform.rotation = rotation;
 
                 if (direction.magnitude > 5)
-                    transform.Translate(0, 0, Time.deltaTime * 1.5f);
+                    transform.Translate(0, 0, Time.deltaTime * speed);
             }
         }
 }

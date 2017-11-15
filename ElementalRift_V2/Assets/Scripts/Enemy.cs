@@ -27,18 +27,11 @@ public class Enemy : MonoBehaviour
         }
     }
 
-    public void TakeDamage(float amount)
+    public void TakeDamage()
     {
-        //health -= amount;
-        //if (health <= 0f)
-        //{
-        //    Die();
-        //}
+       
         patrol.enabled = false;
 
     }
-    void Die()
-    {
-        Destroy(gameObject);
-    }
+   
 }
