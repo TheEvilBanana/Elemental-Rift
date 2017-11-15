@@ -7,10 +7,24 @@ public class Enemy : MonoBehaviour
 
     public float health = 50f;
     private EnemyPatrol patrol;
+    public float timer = 3f;
 
     private void Awake()
     {
         patrol = GetComponent<EnemyPatrol>();
+    }
+    private void Update()
+    {
+        if(patrol.enabled==false)
+        {
+            timer -= Time.deltaTime;
+            if (timer <= 0)
+            {
+                patrol.enabled = true;
+                timer = 3f;
+            }
+                
+        }
     }
 
     public void TakeDamage(float amount)
@@ -21,6 +35,7 @@ public class Enemy : MonoBehaviour
         //    Die();
         //}
         patrol.enabled = false;
+
     }
     void Die()
     {

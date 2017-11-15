@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028334, g: 0.2257134, b: 0.30692226, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
@@ -386,7 +386,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2e20ba3e5f319494984aebf2c805e321, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 1991327973}
+  player: {fileID: 0}
 --- !u!114 &556265425
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -399,6 +399,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 50
+  timer: 5
 --- !u!23 &556265426
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -706,7 +707,7 @@ MonoBehaviour:
   size: 50
   maxAngle: 180
   minAngle: -180
-  cameraLookTarget: {fileID: 747230619}
+  cameraLookTarget: {fileID: 0}
 --- !u!1 &1267324483
 GameObject:
   m_ObjectHideFlags: 0
@@ -1040,8 +1041,8 @@ MonoBehaviour:
   speed: 5
   Damping: {x: 5, y: 2}
   Sensitivity: {x: 2, y: 6}
-  cameraLookTarget: {fileID: 747230619}
-  RotateY: {fileID: 195994504}
+  cameraLookTarget: {fileID: 0}
+  RotateY: {fileID: 0}
   maxAngle: 0
   minAngle: 0
 --- !u!143 &1991327975
@@ -1113,7 +1114,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2e20ba3e5f319494984aebf2c805e321, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 1991327973}
+  player: {fileID: 0}
 --- !u!114 &2075353860
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1126,6 +1127,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 50
+  timer: 5
 --- !u!23 &2075353861
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -1223,7 +1225,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2e20ba3e5f319494984aebf2c805e321, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 1991327973}
+  player: {fileID: 0}
 --- !u!114 &2117304390
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1236,6 +1238,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 50
+  timer: 5
 --- !u!23 &2117304391
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -1400,6 +1403,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 50
+  timer: 5
 --- !u!114 &2117441361
 MonoBehaviour:
   m_ObjectHideFlags: 0
