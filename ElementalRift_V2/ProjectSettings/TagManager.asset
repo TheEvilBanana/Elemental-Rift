@@ -12,6 +12,9 @@ TagManager:
   - Water_Door2
   - Water_Door3
   - Radiated_Plane
+  - Fire
+  - Water
+  - Light
   layers:
   - Default
   - TransparentFX
@@ -48,4 +51,7 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: First
+    uniqueID: 2308612737
     locked: 0

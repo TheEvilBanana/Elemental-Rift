@@ -9,11 +9,13 @@ public class Gun : MonoBehaviour
     public float range = 100f;
 
     public Camera camera;
+    public GameObject target;
     private GameObject Player;
     public GameObject freezeEffect;
     public GameObject knockBackEffect;
     public GameObject knockBackCollider;
 
+    private Vector3 rayDir;
     private void Awake()
     {
         Player = GameObject.FindGameObjectWithTag("Player");
@@ -22,6 +24,7 @@ public class Gun : MonoBehaviour
 
     void Update()
     {
+        rayDir = target.transform.position - camera.transform.position;
         //For the left mouse click play - the freeze attack
         if (Input.GetButtonDown("Fire1"))
         {
@@ -39,18 +42,22 @@ public class Gun : MonoBehaviour
     void Shoot()
     {
         RaycastHit hit;
-        if (Physics.Raycast(Player.transform.position, Player.transform.forward, out hit, range))
+        if (Physics.Raycast(camera.transform.position, rayDir, out hit, range))
         {
             Debug.Log(hit.transform);
-            Enemy target = hit.transform.GetComponent<Enemy>();
-
-            if (target != null)
+            //Enemy target = hit.transform.GetComponent<Enemy>();
+            
+            if (hit.transform.tag == "Enemy")
             {
+                Enemy target = hit.transform.GetComponent<Enemy>();
                 target.TakeDamage();
+                GameObject impactGO = Instantiate(freezeEffect, hit.point, Quaternion.identity);
+                Destroy(impactGO, 2f);
             }
 
-            GameObject impactGO = Instantiate(freezeEffect, hit.point, Quaternion.LookRotation(hit.normal));
-            Destroy(impactGO, 2f);
+            //GameObject impactGO = Instantiate(freezeEffect, hit.point, Quaternion.LookRotation(hit.normal));
+            //GameObject impactGO = Instantiate(freezeEffect, hit.point, Quaternion.identity);
+            //Destroy(impactGO, 2f);
         }
     }
 

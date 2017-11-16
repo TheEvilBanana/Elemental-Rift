@@ -16,8 +16,6 @@ public class Player_Movement : MonoBehaviour
         }
     }
 
-
-
     public float speed;
     public Vector2 Damping;
     public Vector2 Sensitivity;
@@ -69,5 +67,4 @@ public class Player_Movement : MonoBehaviour
         //transform.localEulerAngles = new Vector3(transform.localEulerAngles.x, rotationY, transform.localEulerAngles.z);
 
     }
-
 }

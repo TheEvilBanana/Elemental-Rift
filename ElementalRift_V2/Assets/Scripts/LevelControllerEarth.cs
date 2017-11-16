@@ -11,11 +11,12 @@ public class LevelControllerEarth : MonoBehaviour {
     void OnTriggerEnter(Collider col)
     {
 
-        if(col.gameObject.tag=="Player")
-        ReturnPortal.SetActive(true);
-        StaticScriptGlobalVariables.AshOfEarth = 1;
-        gameObject.SetActive(false);
-
+        if (col.gameObject.tag == "Player")
+        {
+            ReturnPortal.SetActive(true);
+            StaticScriptGlobalVariables.AshOfEarth = 1;
+            gameObject.SetActive(false);
+        }
     }
 
 }

@@ -21,7 +21,7 @@ GameObject:
   - component: {fileID: 4977605353540780}
   - component: {fileID: 114768912843344128}
   m_Layer: 0
-  m_Name: SunStrike
+  m_Name: SunStrike_Spell
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
