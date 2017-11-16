@@ -12,9 +12,12 @@ public class LevelControllerFire1 : MonoBehaviour {
     {
 
         if (col.gameObject.tag == "Player")
+        {
             ReturnPortal.SetActive(true);
-        StaticScriptGlobalVariables.AshOfFire = 1;
-        gameObject.SetActive(false);
+            StaticScriptGlobalVariables.AshOfFire = 1;
+            gameObject.SetActive(false);
+        }
+           
 
     }
 

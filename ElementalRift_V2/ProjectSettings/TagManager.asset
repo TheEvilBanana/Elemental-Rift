@@ -15,6 +15,7 @@ TagManager:
   - Fire
   - Water
   - Light
+  - FireButton
   layers:
   - Default
   - TransparentFX
