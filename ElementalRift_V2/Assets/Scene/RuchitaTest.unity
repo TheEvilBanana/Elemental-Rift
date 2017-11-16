@@ -1076,12 +1076,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   range: 100
+  spawnDistance: 0
   camera: {fileID: 1835060507}
   target: {fileID: 103020175}
-  source: {fileID: 1146780637}
   freezeEffect: {fileID: 1735770080515698, guid: 785edd2b3668146408420f0286294f8b,
     type: 2}
-  knockBackEffect: {fileID: 1797655927350020, guid: 594f8d6f19994f34da92ba3237c41d61,
+  knockBackEffect: {fileID: 1975917354221818, guid: 594f8d6f19994f34da92ba3237c41d61,
     type: 2}
   knockBackCollider: {fileID: 0}
 --- !u!1 &2075353858

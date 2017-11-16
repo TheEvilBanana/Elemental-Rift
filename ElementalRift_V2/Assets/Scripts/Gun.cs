@@ -7,6 +7,7 @@ public class Gun : MonoBehaviour
 
 
     public float range = 100f;
+    public float spawnDistance;
 
     public Camera camera;
     public GameObject target;
@@ -64,9 +65,13 @@ public class Gun : MonoBehaviour
     //For the knockback attack
     void KnockBack()
     {
-        GameObject knock = Instantiate(knockBackEffect, Player.transform.position, Player.transform.rotation);
-       // GameObject collider = Instantiate(knockBackCollider, Player.transform.position, Player.transform.rotation);
+
+        Vector3 playerPos = Player.transform.position;
+        Vector3 playerDirection = Player.transform.forward;
+        spawnDistance = 8.0f;
+        Vector3 spawnPos = playerPos + playerDirection * spawnDistance;
+
+        GameObject knock = Instantiate(knockBackEffect, spawnPos, Player.transform.rotation);
         Destroy(knock, 2f);
-        //Destroy(collider, 2f);
     }
 }

@@ -14,9 +14,9 @@ public class KnockBackSpell : MonoBehaviour {
     void Start()
     {
         print("Collider appearing");
-        colRange.x = 0.75f;
+        colRange.x = 1.0f;
         colRange.y = 1.0f;
-        colRange.z = 2.0f;
+        colRange.z = 10.0f;
 
         transform = GetComponent<Transform>();
 
@@ -33,5 +33,8 @@ public class KnockBackSpell : MonoBehaviour {
             }
         }
     }
+
+
+
 
 }
