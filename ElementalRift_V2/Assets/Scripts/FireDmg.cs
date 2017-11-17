@@ -23,6 +23,11 @@ public class FireDmg : MonoBehaviour {
             {
                 Destroy(col.gameObject);
             }
+
+            if(col.CompareTag("FireButton"))
+            {
+                col.gameObject.SetActive(false);
+            }
         }
     }
 

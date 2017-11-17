@@ -16,6 +16,8 @@ TagManager:
   - Water
   - Light
   - FireButton
+  - WaterButton
+  - ImmortalEnemy
   layers:
   - Default
   - TransparentFX
@@ -25,7 +27,7 @@ TagManager:
   - UI
   - 
   - 
-  - 
+  - Terrain
   - 
   - 
   - 

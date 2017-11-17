@@ -11,9 +11,9 @@ public class Resource_Manager : MonoBehaviour {
 
     //public GameObject go;
 
-    //public Text earthRunesCount;
-    //public Text fireRunesCount;
-    //public Text waterRunesCount;
+    public Text earthRunesCount;
+    public Text fireRunesCount;
+    public Text waterRunesCount;
 
     public float increasePerSecond = 1.0f;
     public float decreasePerSecond = 0.5f;
@@ -55,9 +55,9 @@ public class Resource_Manager : MonoBehaviour {
         }
 
 
-        //earthRunesCount.text = earthRune.ToString();
-        //fireRunesCount.text = fireRune.ToString();
-        //waterRunesCount.text = waterRune.ToString();
+        earthRunesCount.text = earthRune.ToString();
+        fireRunesCount.text = fireRune.ToString();
+        waterRunesCount.text = waterRune.ToString();
     }
 
 

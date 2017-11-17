@@ -12,11 +12,23 @@ EditorBuildSettings:
     path: Assets/Scene/PrototypeLevel1.unity
     guid: 1eb18b16ca0b21347a66519f572b863d
   - enabled: 1
-    path: Assets/Scene/PrototypeLevel1_Fire.unity
-    guid: eaeb8afaa2ca36944bcc2ddc04282cd9
-  - enabled: 1
     path: Assets/Scene/PrototypeLevel1_Earth.unity
     guid: 3349be17fbcc1ee48922f22768d3b019
   - enabled: 1
+    path: Assets/Scene/PrototypeLevel1_Fire.unity
+    guid: eaeb8afaa2ca36944bcc2ddc04282cd9
+  - enabled: 1
     path: Assets/Scene/PrototypeLevel1_Water.unity
     guid: 86a97b1804b5906419c650e43e570eb8
+  - enabled: 1
+    path: Assets/Scene/GroundInstructionScene.unity
+    guid: 21de09315c17ee4439b452a955cdc3ed
+  - enabled: 1
+    path: Assets/Scene/WaterInstructionScene.unity
+    guid: 1bb87b831b847134d8aa54c288bd2b7d
+  - enabled: 1
+    path: Assets/Scene/FireInstructionScene.unity
+    guid: d1a61299a2cea354e8c6266af8a6b84e
+  - enabled: 1
+    path: Assets/Scene/GeneralInstructions.unity
+    guid: 60e5d27d8afaaa54fb5a73438d1ded16

@@ -80,7 +80,7 @@ GameObject:
   - component: {fileID: 114524160158117932}
   - component: {fileID: 114914015868012446}
   m_Layer: 0
-  m_Name: RigidBodyFPSController
+  m_Name: Player
   m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -440,11 +440,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 33d64182b79b6474eb5f6a0182ea6bfc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  volcano: {fileID: 1598577921923050, guid: d04b0d583ba2795448725a63821609ca, type: 2}
-  sunStrike: {fileID: 1101249215314282, guid: d540f8e8628ab874eadba7e1f8ccad9f, type: 2}
+  volcano: {fileID: 1598577921923050, guid: 94fff558a04f5864a963d0408abdffd7, type: 2}
+  sunStrike: {fileID: 1101249215314282, guid: c3934fb73fbd247498c757d1d61c812a, type: 2}
   freezeEffect: {fileID: 1735770080515698, guid: 785edd2b3668146408420f0286294f8b,
     type: 2}
-  knockBackEffect: {fileID: 1797655927350020, guid: 594f8d6f19994f34da92ba3237c41d61,
+  knockBackEffect: {fileID: 1975917354221818, guid: 594f8d6f19994f34da92ba3237c41d61,
     type: 2}
   camera: {fileID: 20846991486920726}
   target: {fileID: 1000443071985894}

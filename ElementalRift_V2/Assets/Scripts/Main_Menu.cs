@@ -8,7 +8,7 @@ public class Main_Menu : MonoBehaviour {
     public void ClickedOnPlayGame()
     {
 
-        SceneManager.LoadScene("PrototypeLevel1");
+        SceneManager.LoadScene("GeneralInstructions");
     }
 
 

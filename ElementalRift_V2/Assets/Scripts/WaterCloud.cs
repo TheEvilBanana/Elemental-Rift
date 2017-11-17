@@ -19,9 +19,6 @@ public class WaterCloud : MonoBehaviour {
     float startPositionY;
     float destinationPositionY;
 
-    public Color mouseOverColor;
-    public Color mouseExitColor;
-
     private bool Water_Door1_Move=false;
     private bool Water_Door2_Move=false;
     private bool Water_Door3_Move=false;
@@ -38,6 +35,9 @@ public class WaterCloud : MonoBehaviour {
     float Water_Stream2_DestinationPositionZ;
     float Water_Stream3_DestinationPositionX;
 
+    public GameObject waterButton1;
+    public GameObject waterButton2;
+
     void Start()
     {
      
@@ -47,23 +47,19 @@ public class WaterCloud : MonoBehaviour {
         Water_Door3_up = 0;
 
 
-            Water_Stream1_DestinationPositionZ = 143.5f;
-            Water_Stream2_DestinationPositionZ = 1.2f;
-            Water_Stream3_DestinationPositionX = 184.0f;
+        Water_Stream1_DestinationPositionZ = 143.5f;
+        Water_Stream2_DestinationPositionZ = 1.2f;
+        Water_Stream3_DestinationPositionX = 184.0f;
     }
 
     void Update()
     {
+        CheckDoor();
         if (upFlag == 1 && IsReachedtoDestination())
         {
 
             transform.Translate(Vector3.forward * Time.deltaTime * liftSpeed);
         }
-
-
-
-
-
 
 
         if (Water_Door1_Move == true)
@@ -100,16 +96,62 @@ public class WaterCloud : MonoBehaviour {
 
         }
 
-
-
-
-
-
-
-
-
-
     }
+
+    void CheckDoor()
+    {
+        if (!waterButton1.activeInHierarchy && !waterButton2.activeInHierarchy)
+        {
+            if (upFlag != 1)
+            {
+                // Debug.Log("Clicked");
+                upFlag = 1;
+                //      GetComponent<Rigidbody>().useGravity = false;
+                startPositionY = transform.position.y;
+                destinationPositionY = startPositionY + liftDistance;
+            }
+
+
+            if (gameObject.tag == "Water_Door1" && Water_Door1_up == 0)
+            {
+                if (Water_Stream1.transform.position.z > Water_Stream1_DestinationPositionZ)
+                {
+                    Water_Door1_Move = true;
+                }
+                else
+                {
+
+                    Water_Door1_Move = false;
+                    Water_Door1_up = 1;
+                }
+            }
+
+
+
+            if (gameObject.tag == "Water_Door2" && Water_Door2_up == 0)
+            {
+                if (Water_Stream2.transform.position.z < Water_Stream2_DestinationPositionZ)
+                {
+                    Water_Door2_Move = true;
+                }
+                else
+                {
+
+                    Water_Door2_Move = false;
+                    Water_Door2_up = 1;
+                }
+            }
+
+
+            if (gameObject.tag == "Water_Door3")
+            {
+                WaterFall.SetActive(true);
+                AshOfWater.SetActive(true);
+            }
+
+        }
+    }
+
     private void OnMouseDown()
     {
         if (upFlag != 1)
@@ -182,17 +224,6 @@ public class WaterCloud : MonoBehaviour {
             return false;
 
         }
-    }
-
-
-    private void OnMouseEnter()
-    {
-        GetComponent<Renderer>().material.SetColor("_Color", mouseExitColor);
-    }
-
-    private void OnMouseExit()
-    {
-        GetComponent<Renderer>().material.SetColor("_Color", mouseOverColor);
     }
 
 

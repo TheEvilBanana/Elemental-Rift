@@ -40,7 +40,7 @@ public class Input_Manager : MonoBehaviour {
 
         if (Input.GetKeyDown(KeyCode.Alpha3))
         {
-            if (resource_Manager.fireRune >= 2)
+            if (resource_Manager.fireRune >= 3)
             {
                 //ppc.fireRune -= 2;
                 //Instantiate(volcano, volcanoTransform.position, volcanoTransform.rotation);
@@ -51,7 +51,7 @@ public class Input_Manager : MonoBehaviour {
         if (Input.GetKeyDown(KeyCode.Alpha4))
         {
 
-            if (resource_Manager.fireRune >= 3)
+            if (resource_Manager.fireRune >= 2)
             {
                 //ppc.fireRune -= 3;
                 //Instantiate(sunStrike, sunStrikeTransform.position, sunStrikeTransform.rotation);
@@ -71,16 +71,21 @@ public class Input_Manager : MonoBehaviour {
         {
             if (resource_Manager.earthRune >= 2)
             {
-                resource_Manager.earthRune -= 2;
-                GameObject knock = Instantiate(knockBackEffect, gameObject.transform.position, gameObject.transform.rotation);
-                Destroy(knock, 2f);
+                knockBackFlag = true;
+                //resource_Manager.earthRune -= 2;
+                //Vector3 playerPos = gameObject.transform.position;
+                //Vector3 playerDirection = gameObject.transform.forward;
+                //float spawnDistance = 8.0f;
+                //Vector3 spawnPos = playerPos + playerDirection * spawnDistance;
+                //GameObject knock = Instantiate(knockBackEffect, spawnPos, gameObject.transform.rotation);
+                //Destroy(knock, 2f);
             }
         }
 
         if (Input.GetMouseButtonDown(0) && sunStrikeFlag == true)
         {
             sunStrikeFlag = false;
-            resource_Manager.fireRune -= 3;
+            resource_Manager.fireRune -= 2;
             //Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
             RaycastHit hit;
             if (Physics.Raycast(camera.transform.position, rayDir, out hit))
@@ -93,7 +98,7 @@ public class Input_Manager : MonoBehaviour {
         if (Input.GetMouseButtonDown(0) && volcanoFlag == true)
         {
             volcanoFlag = false;
-            resource_Manager.fireRune -= 2;
+            resource_Manager.fireRune -= 3;
             //Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
             RaycastHit hit;
             if (Physics.Raycast(camera.transform.position, rayDir, out hit))
@@ -111,13 +116,34 @@ public class Input_Manager : MonoBehaviour {
             RaycastHit hit;
             if (Physics.Raycast(camera.transform.position, rayDir, out hit))
             {
-                if (hit.transform.tag == "Enemy")
+                if (hit.transform.tag == "Enemy" || hit.transform.tag == "ImmortalEnemy")
                 {
                     Enemy enemyHit = hit.transform.GetComponent<Enemy>();
                     enemyHit.TakeDamage();
                     GameObject impactGO = Instantiate(freezeEffect, hit.point, Quaternion.identity);
                     Destroy(impactGO, 2f);
                 }
+
+                if (hit.transform.tag == "WaterButton")
+                {
+                    GameObject impactGO = Instantiate(freezeEffect, hit.point, Quaternion.identity);
+                    Destroy(impactGO, 2f);
+                    hit.transform.gameObject.SetActive(false);
+                }
+            }
+
+        }
+
+        if (Input.GetMouseButtonDown(0) && knockBackFlag == true)
+        {
+            knockBackFlag = false;
+            resource_Manager.earthRune -= 2;
+            //Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+            RaycastHit hit;
+            if (Physics.Raycast(camera.transform.position, rayDir, out hit))
+            {
+                GameObject knock = Instantiate(knockBackEffect, hit.point + Vector3.up * 1.0f, Quaternion.identity);
+                Destroy(knock, 2f);
             }
 
         }

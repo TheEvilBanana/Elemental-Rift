@@ -28,16 +28,29 @@ public class LevelControllerEarth1 : MonoBehaviour {
 
 
 
-    void OnTriggerEnter(Collider col)
-    {
+    //void OnTriggerEnter(Collider col)
+    //{
        
+    //    if (ReturnPortal.activeInHierarchy)
+    //    {
+    //        if (col.gameObject.tag == "Player")
+    //        {
+                
+    //            isFalling = true;
+               
+    //        }
+    //    }
+    //}
+
+    private void OnCollisionEnter(Collision collision)
+    {
         if (ReturnPortal.activeInHierarchy)
         {
-          
-            if (col.gameObject.tag == "Player")
+            if (collision.gameObject.tag == "Player")
             {
+
                 isFalling = true;
-               
+
             }
         }
     }
